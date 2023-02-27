@@ -74,7 +74,7 @@ const dbConnect = require("./db/dbConnect");
 const User = require("./db/userModel");
 const auth = require("./auth");
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'http://www.modaragga.com'
 }));
 
 app.use(bodyParser.json());
@@ -85,7 +85,7 @@ dbConnect();
 module.exports = app;
 
 // This is your test secret API key.
-const stripe = require("stripe")('sk_test_51MEy8XEAiB7KKlYvwZS9W4eI7Kvc7zOXjXYaA4SR8qzmb6qCD3hISnra7hpdKwUbleXckLPe6sbN0cxmE3M4AGvu00aLw0GYPY');
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 app.use(express.static("public"));
 app.use(express.json());
