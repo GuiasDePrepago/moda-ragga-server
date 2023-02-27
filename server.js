@@ -74,7 +74,7 @@ const dbConnect = require("./db/dbConnect");
 const User = require("./db/userModel");
 const auth = require("./auth");
 app.use(cors({
-    origin: 'http://www.modaragga.com'
+    origin: 'https://modaragga.com'
 }));
 
 app.use(bodyParser.json());
